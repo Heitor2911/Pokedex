@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #CC0000;
+  font-family: 'Press Start 2P', monospace;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 0 #8B0000;
+}
+
+#poke-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+  background-color: #1a3a8f;
+  border: 6px solid #0a1f5c;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+#poke-list li {
+  background-color: #0a1f5c;
+  border: 3px solid #88aaff;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0.5rem;
+  gap: 0.5rem;
+}
+
+#poke-list img {
+  width: 96px;
+  height: 96px;
+  image-rendering: pixelated;
+}
+
+#poke-list p {
+  color: white;
+  font-size: 0.45rem;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+@media (min-width: 480px) {
+  body { padding: 1rem; }
+  h1 { font-size: 0.9rem; }
+  #poke-list { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); padding: 1rem; }
+}
+ 
+@media (min-width: 481px) and (max-width: 768px) {
+  body { padding: 1.5rem; }
+  h1 { font-size: 1.1rem; }
+  #poke-list { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+}
+
+@media (min-width: 1200px) {
+  body { padding: 2.5rem 4rem; }
+  #poke-list { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+}
