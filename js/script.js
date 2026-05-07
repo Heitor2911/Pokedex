@@ -29,5 +29,3 @@ function loadPokemonList() {
     .then(jsonResponse)
     console.log('Depression')
 }
-
-loadPokemonList()
