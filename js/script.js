@@ -27,5 +27,4 @@ function loadPokemonList() {
     fetch("https://pokeapi.co/api/v2/pokemon?offset=0&limit=151")
     .then(returnResponse)
     .then(jsonResponse)
-    console.log('Depression')
 }
