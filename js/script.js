@@ -1,34 +1,3 @@
-<<<<<<< HEAD
-function returnResponse (response) {
-    return response.json()
-}
-function itemFor (item) {
-    const listPokemon = document.getElementById("poke-list")
-    const pokeImage = document.createElement('img') 
-
-    const id = item.url.split("/").filter(Boolean).pop()
-    pokeImage.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`
-    
-    const namePokemon = document.createElement('p')
-    namePokemon.innerHTML = item.name //item.url para captar o id de cada pokemo, desafio alterar cada imagem para o pokemon referente
-    
-    const line = document.createElement('li')
-    line.appendChild(pokeImage)
-    line.appendChild(namePokemon)
-
-    listPokemon.appendChild(line)
-}
-
-function jsonResponse(json) {
-    json.results.forEach(itemFor)
-}
-
-function loadPokemonList() {
-    
-    fetch("https://pokeapi.co/api/v2/pokemon?offset=0&limit=151")
-    .then(returnResponse)
-    .then(jsonResponse)
-=======
 const params = new URLSearchParams(window.location.search);
 const gen = params.get('gen') || 1;
 
@@ -110,5 +79,4 @@ function removeFavorite(id) {
     favorites = favorites.filter(p => p.id !== id); // Remove um pokémon da lista de favoritos, onde o id é diferente do id passado Ex:(1 !== 5) = fica na lista, Ex:(1 !== 1) = remove da lista
     localStorage.setItem('favorites', JSON.stringify(favorites));
     loadFavorites(); // Recarrega a lista na tela
->>>>>>> master
 }
