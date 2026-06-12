@@ -37,7 +37,7 @@ function itemFor(item) {
   line.innerHTML = `
         <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png">
         <p>${item.name}</p>
-        <button onclick="saveFavorite('${item.name}', '${id}')"> SALVAR </button>
+        <button onclick="saveFavorite('${item.name}', '${id}')"> Capturar </button>
     `;
   listPokemon.appendChild(line);
 }
@@ -50,6 +50,9 @@ function saveFavorite(name, id) {
     favorites.push({ name, id });
     localStorage.setItem("favorites", JSON.stringify(favorites));
     alert("Capturado com sucesso!");
+  }
+  else {
+    alert("Pokémon já capturado!")
   }
 }
 
